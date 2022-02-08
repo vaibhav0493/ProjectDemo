@@ -9,6 +9,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,12 +26,15 @@ public class BaseClass {
 	static String workingDir = System.getProperty("user.dir");
 	static WebDriver driver;
 	static Date date = new Date();
+	
+	//Logs
+	public static Logger log = LogManager.getLogger(BaseClass.class.getName());
 
 	// workingDir + "//src
 	@BeforeSuite
 	public static void loadPropfile() throws IOException {
 		try {
-			File file = new File(workingDir + "//src//test//java//resources//config.properties");
+			File file = new File(workingDir + "//src//main//java//resources//config.properties");
 			FileInputStream ip = new FileInputStream(file);
 
 			prop = new Properties();
@@ -43,7 +48,7 @@ public class BaseClass {
 	public static WebDriver LaunchURL() throws IOException {
 		loadPropfile();
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\vaibhav.nagpal\\Downloads\\automation\\chromedriver_win32\\chromedriver.exe");
+				workingDir+"\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(prop.getProperty("URL"));
 		driver.manage().window().maximize();
@@ -52,7 +57,7 @@ public class BaseClass {
 		return driver;
 	}
 	
-
+/*
 	public void takeScreenShotOnFailure(String testMethodName) {
 		File srcfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -62,15 +67,24 @@ public class BaseClass {
 			System.out.println(e.toString());
 		}
 	}
+*/
+	
+	public String getScreenshots(String testcaseName, WebDriver driver) throws IOException {
+		TakesScreenshot ss = (TakesScreenshot) driver;
+		File source = ss.getScreenshotAs(OutputType.FILE);
+		String destFile = System.getProperty("user.dir")+"\\failedSS\\"+testcaseName+".png";
+		FileUtils.copyFile(source, new File(destFile));
+		return destFile;
+	}
 
 	public static void scrollDown(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,250");
+		js.executeScript("window.scrollBy(0,500");
 	}
 
 	public static void scrollUp(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,-250");
+		js.executeScript("window.scrollBy(0,-500");
 	}
 
 	public static void scrollToClick(WebElement element, WebDriver driver) {

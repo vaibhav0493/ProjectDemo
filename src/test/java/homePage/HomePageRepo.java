@@ -22,6 +22,18 @@ public class HomePageRepo extends BaseClass {
 	@FindBy(xpath="//*[@id='SubmitCreate']")
 	private WebElement createAccount;
 	
+	@FindBy(xpath="//*[contains(text(),'Invalid email address.')]")
+	private WebElement errorMsg;
+	
+	@FindBy(id="email")
+	private WebElement loginEmail;
+	
+	@FindBy(id="passwd")
+	private WebElement loginPswd;
+	
+	@FindBy(xpath="//*[@id='SubmitLogin']")
+	private WebElement signInButton ;
+	
 	
 	
 	public WebElement signIn() {
@@ -36,6 +48,21 @@ public class HomePageRepo extends BaseClass {
 		return createAccount;
 	}
 	
+	public WebElement verifyErrorMsg() {
+		return errorMsg;
+	}
+	
+	public WebElement loginEmail() {
+		return loginEmail;
+	}
+	
+	public WebElement loginPassword() {
+		return loginPswd;
+	}
+	
+	public WebElement signInButton() {
+		return signInButton;
+	}
 
 	
 }

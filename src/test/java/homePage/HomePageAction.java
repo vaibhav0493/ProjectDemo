@@ -1,13 +1,13 @@
 package homePage;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import CommonLib.BaseClass;
 
 public class HomePageAction extends BaseClass {
 
 	HomePageRepo homepage ;
-	String email = "vaibhav.nagpal@gmail.com";
 	
 	public HomePageAction(WebDriver driver) {
 		homepage = new HomePageRepo(driver);
@@ -18,11 +18,27 @@ public class HomePageAction extends BaseClass {
 	}
 	
 	public void enterEmail() {
-		homepage.emailId().sendKeys(email);
+		homepage.emailId().sendKeys(prop.getProperty("email"));
 	}
 	
 	public void clickCreateButton() {
 		homepage.createButton().click();
+	}
+	
+	public String getErrorText() {
+		return homepage.verifyErrorMsg().getText();
+	}
+	
+	public WebElement enterLoginEmail() {
+		return homepage.loginEmail();
+	}
+	
+	public WebElement enterLoginPswd() {
+		return homepage.loginPassword();
+	}
+	
+	public void clickSignInButton() {
+		 homepage.signInButton().click();
 	}
 	
 }
