@@ -15,7 +15,7 @@ import signupPage.SignupPageRepo;
 
 public class FailedSignup extends BaseClass{
 	
-	WebDriver driver;
+	public WebDriver driver;
 	HomePageAction homePage;
 	SignupPageAction signupPage;
 	SignupPageRepo signupRepo;

@@ -2,6 +2,7 @@ package finalAssesment1;
 
 import java.io.IOException;
 
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -15,7 +16,7 @@ import signupPage.SignupPageRepo;
 
 public class LoginCart extends BaseClass {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	HomePageAction homePage;
 	SignupPageAction signupPage;
 	SignupPageRepo signupRepo;
@@ -26,7 +27,7 @@ public class LoginCart extends BaseClass {
 		driver = LaunchURL();
 	}
 	
-	@Test
+	@Test(dataProvider="getLoginData")
 	public void Login(String emailId, String password)
 	{
 		homePage = new HomePageAction(driver);
@@ -43,10 +44,12 @@ public class LoginCart extends BaseClass {
 	}
 	
 	@DataProvider
-	public void getLoginData() {
+	public Object[][] getLoginData() {
 		Object [][] data = new Object[1][2];
 		data[0][0] = "vaibhav.nagpal@gmail.com";
 		data[0][1] = "test123";
+		
+		return data;
 	}
 
 }

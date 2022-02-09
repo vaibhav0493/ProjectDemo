@@ -24,7 +24,7 @@ public class BaseClass {
 
 	public static Properties prop;
 	static String workingDir = System.getProperty("user.dir");
-	static WebDriver driver;
+	public static WebDriver driver;
 	static Date date = new Date();
 	
 	//Logs
@@ -34,7 +34,7 @@ public class BaseClass {
 	@BeforeSuite
 	public static void loadPropfile() throws IOException {
 		try {
-			File file = new File(workingDir + "//src//main//java//resources//config.properties");
+			File file = new File(workingDir +"//src//main//java//resources//config.properties");
 			FileInputStream ip = new FileInputStream(file);
 
 			prop = new Properties();

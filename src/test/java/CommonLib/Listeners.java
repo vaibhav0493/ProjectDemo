@@ -14,8 +14,8 @@ import resources.TestReport;
 
 public class Listeners extends BaseClass implements ITestListener{
 	
-	ExtentTest test;
-	ExtentReports extent = TestReport.getReportMethod();
+	public static ExtentTest test;
+	ExtentReports extent;
 	ThreadLocal<ExtentTest> exTest = new ThreadLocal<ExtentTest>();
 
 	@Override
@@ -23,6 +23,8 @@ public class Listeners extends BaseClass implements ITestListener{
 		// TODO Auto-generated method stub
 		test = extent.createTest(result.getMethod().getMethodName());
 		exTest.set(test);
+		TestReport.getReportMethod();
+		
 	}
 
 	@Override

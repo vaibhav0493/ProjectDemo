@@ -8,8 +8,7 @@
   <test thread-count="5" name="Login" parallel="classes">
     <classes>
       <class name="finalAssesment1.LoginCart"/>
-      <class name="finalAssesment1.SignUp"/>
-  		<class name="finalAssesment1.FailedSignup"/>
+      
   		</classes>
   </test>
 </suite> <!-- Suite -->

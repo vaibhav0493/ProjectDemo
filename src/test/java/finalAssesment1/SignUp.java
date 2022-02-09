@@ -16,7 +16,7 @@ import signupPage.SignupPageRepo;
 
 public class SignUp extends BaseClass {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	HomePageAction homepage;
 	SignupPageAction signupPage;
 	SignupPageRepo signupRepo;
