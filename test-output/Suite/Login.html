@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 09 03:07:01 IST 2022</td>
+<td>Started on:</td><td>Fri Feb 11 02:18:56 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>10 seconds (10739 ms)</td>
+<tr><td>Total time:</td><td>37 seconds (37456 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='finalAssesment1.LoginCart.Login()'><b>Login</b><br>Test class: finalAssesment1.LoginCart<br>Parameters: vaibhav.nagpal@gmail.com, test123</td>
+<td title='finalAssesment1.SignUp.CreateAccount()'><b>CreateAccount</b><br>Test class: finalAssesment1.SignUp</td>
 <td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
-	at CommonLib.Listeners.onTestStart(Listeners.java:24)
+	at CommonLib.Listeners.onTestStart(Listeners.java:25)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:831)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace972843820", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace972843820'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
-	at CommonLib.Listeners.onTestStart(Listeners.java:24)
+... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace168976914", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace168976914'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentReports.createTest(String)&quot; because &quot;this.extent&quot; is null
+	at CommonLib.Listeners.onTestStart(Listeners.java:25)
 	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:73)
 	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1389)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:559)
@@ -91,22 +92,30 @@ function toggleAllBoxes() {
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:831)
 </pre></div></td>
 <td>0</td>
-<td>finalAssesment1.LoginCart@69c43e48</td></tr>
+<td>finalAssesment1.SignUp@46cf05f7</td></tr>
 <tr>
-<td title='finalAssesment1.LoginCart.Login()'><b>Login</b><br>Test class: finalAssesment1.LoginCart</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.fail(java.lang.Throwable)&quot; because &quot;this.test&quot; is null
-	at CommonLib.Listeners.onTestFailure(Listeners.java:38)
+<td title='finalAssesment1.SignUp.CreateAccount()'><b>CreateAccount</b><br>Test class: finalAssesment1.SignUp</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.fail(java.lang.Throwable)&quot; because the return value of &quot;java.lang.ThreadLocal.get()&quot; is null
+	at CommonLib.Listeners.onTestFailure(Listeners.java:41)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:831)
-... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace130850024", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace130850024'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.fail(java.lang.Throwable)&quot; because &quot;this.test&quot; is null
-	at CommonLib.Listeners.onTestFailure(Listeners.java:38)
+... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace398654187", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace398654187'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.fail(java.lang.Throwable)&quot; because the return value of &quot;java.lang.ThreadLocal.get()&quot; is null
+	at CommonLib.Listeners.onTestFailure(Listeners.java:41)
 	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:67)
 	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1389)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:636)
@@ -114,12 +123,19 @@ function toggleAllBoxes() {
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:831)
 </pre></div></td>
-<td>10</td>
-<td>finalAssesment1.LoginCart@69c43e48</td></tr>
+<td>37</td>
+<td>finalAssesment1.SignUp@46cf05f7</td></tr>
 </table><p>
 </body>
 </html>

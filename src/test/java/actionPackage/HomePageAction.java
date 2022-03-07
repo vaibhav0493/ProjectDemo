@@ -1,9 +1,10 @@
-package homePage;
+package actionPackage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import CommonLib.BaseClass;
+import locators.HomePageRepo;
 
 public class HomePageAction extends BaseClass {
 
