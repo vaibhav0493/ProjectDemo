@@ -1,37 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Login(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Final.Assesment1.LoginCart">
+      <class name="finalAssesment1.SignUp">
         <methods>
-          <include name="Login"/>
-          <include name="loadPropfile"/>
-          <include name="LaunchBrowser"/>
-        </methods>
-      </class> <!-- Final.Assesment1.LoginCart -->
-    </classes>
-  </test> <!-- Login(failed) -->
-  <test thread-count="5" parallel="tests" name="Register(failed)">
-    <classes>
-      <class name="Final.Assesment1.SignUp">
-        <methods>
-          <include name="LaunchBrowser"/>
           <include name="CreateAccount"/>
-          <include name="loadPropfile"/>
-        </methods>
-      </class> <!-- Final.Assesment1.SignUp -->
-    </classes>
-  </test> <!-- Register(failed) -->
-  <test thread-count="5" parallel="tests" name="failedScenario(failed)">
-    <classes>
-      <class name="Final.Assesment1.FailedSignup">
-        <methods>
           <include name="LaunchBrowser"/>
           <include name="loadPropfile"/>
-          <include name="ErrorSignup"/>
         </methods>
-      </class> <!-- Final.Assesment1.FailedSignup -->
+      </class> <!-- finalAssesment1.SignUp -->
     </classes>
-  </test> <!-- failedScenario(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

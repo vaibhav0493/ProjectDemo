@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -15,15 +16,15 @@ import resources.TestReport;
 public class Listeners extends BaseClass implements ITestListener{
 	
 	public static ExtentTest test;
-	ExtentReports extent;
-	ThreadLocal<ExtentTest> exTest = new ThreadLocal<ExtentTest>();
+	ExtentReports extent ;
+	private static ThreadLocal<ExtentTest> exTest = new ThreadLocal<ExtentTest>();
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		test = extent.createTest(result.getMethod().getMethodName());
 		exTest.set(test);
-		TestReport.getReportMethod();
+		TestReport.getReportMethod();	
 		
 	}
 
@@ -36,7 +37,7 @@ public class Listeners extends BaseClass implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
-		test.fail(result.getThrowable());
+		exTest.get().fail(result.getThrowable());
 		
 		String testMethodName = result.getMethod().getMethodName();
 		try {
@@ -60,6 +61,7 @@ public class Listeners extends BaseClass implements ITestListener{
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
 		test.log(Status.SKIP, "Test skipped");
+		exTest.get().skip(result.getThrowable());
 	}
 
 	@Override
@@ -77,6 +79,7 @@ public class Listeners extends BaseClass implements ITestListener{
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
+		
 		extent.flush();
 	}
 

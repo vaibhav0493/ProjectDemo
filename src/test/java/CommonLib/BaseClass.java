@@ -17,8 +17,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeSuite;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
@@ -47,13 +50,16 @@ public class BaseClass {
 
 	public static WebDriver LaunchURL() throws IOException {
 		loadPropfile();
-		System.setProperty("webdriver.chrome.driver",
-				workingDir+"\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver",workingDir+"\\chromedriver_win32\\chromedriver.exe");
+		
+		ChromeOptions chromeOptions = new ChromeOptions();
+		WebDriverManager.chromedriver().arch64().setup();
+		
+		driver = new ChromeDriver(chromeOptions);
 		driver.get(prop.getProperty("URL"));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		return driver;
 	}
 	

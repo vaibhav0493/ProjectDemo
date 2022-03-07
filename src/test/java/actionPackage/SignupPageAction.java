@@ -1,4 +1,4 @@
-package signupPage;
+package actionPackage;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import CommonLib.BaseClass;
+import locators.SignupPageRepo;
 
 public class SignupPageAction extends BaseClass {
 	

@@ -1,4 +1,4 @@
-package welcomePage;
+package locators;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

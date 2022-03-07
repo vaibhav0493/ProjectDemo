@@ -1,4 +1,4 @@
-package welcomePage;
+package actionPackage;
 
 public class WelcomePageAction {
 
