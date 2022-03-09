@@ -16,10 +16,10 @@ import locators.SignupPageRepo;
 public class FailedSignup extends BaseClass {
 
 	public WebDriver driver;
-	HomePageAction homePage;
-	SignupPageAction signupPage;
-	SignupPageRepo signupRepo;
-	Utils utils;
+	HomePageAction homePage = new HomePageAction(driver);
+	SignupPageAction signupPage = new SignupPageAction(driver);
+	SignupPageRepo signupRepo = new SignupPageRepo(driver);
+	Utils utils = new Utils();
 
 	@BeforeMethod
 	public void LaunchBrowser() throws IOException {
@@ -29,16 +29,13 @@ public class FailedSignup extends BaseClass {
 	@Test(description = "To verify that if email address is incorrect, it should give an error message ")
 	public void ErrorSignup() {
 		try {
-			homePage = new HomePageAction(driver);
-			signupRepo = new SignupPageRepo(driver);
-			signupPage = new SignupPageAction(driver);
-			utils = new Utils();
+			
 			utils.ImplicitWait(driver, 5);
 
 			homePage.clickSignIn();
+			Thread.sleep(2000);
 			homePage.enterEmail();
 			homePage.clickCreateButton();
-			Thread.sleep(2000);
 			Assert.assertEquals("Invalid email address.", homePage.getErrorText());
 
 			log.info("Error message verified");

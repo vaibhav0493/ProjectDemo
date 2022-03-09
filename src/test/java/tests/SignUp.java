@@ -16,10 +16,10 @@ import locators.SignupPageRepo;
 public class SignUp extends BaseClass {
 
 	public WebDriver driver;
-	HomePageAction homepage;
-	SignupPageAction signupPage;
-	SignupPageRepo signupRepo;
-	Utils utils;
+	HomePageAction homepage = new HomePageAction(driver);
+	SignupPageAction signupPage = new SignupPageAction(driver);
+	SignupPageRepo signupRepo = new SignupPageRepo(driver);
+	Utils utils = new Utils();
 
 	@BeforeMethod
 	public void LaunchBrowser() throws IOException {
@@ -29,10 +29,7 @@ public class SignUp extends BaseClass {
 	@Test(description="To verify that user should be able to do a successful signup")
 	public void CreateAccount() {
 		try {
-			homepage = new HomePageAction(driver);
-			signupRepo = new SignupPageRepo(driver);
-			signupPage = new SignupPageAction(driver);
-			utils = new Utils();
+			
 			utils.ImplicitWait(driver, 5);
 
 			homepage.clickSignIn();
