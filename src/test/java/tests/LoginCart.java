@@ -17,10 +17,10 @@ import locators.SignupPageRepo;
 public class LoginCart extends BaseClass {
 
 	public WebDriver driver;
-	HomePageAction homePage;
-	SignupPageAction signupPage;
-	SignupPageRepo signupRepo;
-	Utils utils;
+	HomePageAction homePage = new HomePageAction(driver);
+	SignupPageAction signupPage= new SignupPageAction(driver);
+	SignupPageRepo signupRepo =  new SignupPageRepo(driver);
+	Utils utils = new Utils();
 
 	@BeforeMethod
 	public void LaunchBrowser() throws IOException {
@@ -29,10 +29,6 @@ public class LoginCart extends BaseClass {
 
 	@Test(dataProvider = "getLoginData", description="To verify a successful Login")
 	public void Login(String emailId, String password) {
-		homePage = new HomePageAction(driver);
-		signupRepo = new SignupPageRepo(driver);
-		signupPage = new SignupPageAction(driver);
-		utils = new Utils();
 
 		utils.ImplicitWait(driver, 5);
 
