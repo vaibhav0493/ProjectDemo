@@ -1,0 +1,6 @@
+12:26:08.577 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Email entered
+12:26:11.058 [TestNG-test=Test-2] INFO  actionPackage.HomePageAction - Clicked on signIn
+12:26:11.127 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Create button clicked
+12:26:16.333 [TestNG-test=Test-2] INFO  actionPackage.HomePageAction - Email entered
+12:26:16.394 [TestNG-test=Test-2] INFO  actionPackage.HomePageAction - Create button clicked
+12:32:10.811 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Clicked on signIn

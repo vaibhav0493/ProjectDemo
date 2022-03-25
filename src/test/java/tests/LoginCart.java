@@ -17,8 +17,8 @@ import locators.SignupPageRepo;
 public class LoginCart extends BaseClass {
 
 	public WebDriver driver;
-	HomePageAction homePage = new HomePageAction(driver);
-	SignupPageAction signupPage= new SignupPageAction(driver);
+	HomePageAction homePage = new HomePageAction();
+	SignupPageAction signupPage= new SignupPageAction();
 	SignupPageRepo signupRepo =  new SignupPageRepo(driver);
 	Utils utils = new Utils();
 
@@ -36,9 +36,10 @@ public class LoginCart extends BaseClass {
 		homePage.enterLoginEmail().sendKeys(emailId);
 		homePage.enterLoginPswd().sendKeys(password);
 		homePage.clickSignInButton();
+		log.info("Successfully Logged In");
 	}
 
-	@DataProvider
+	@DataProvider(parallel=true)
 	public Object[][] getLoginData() {
 		Object[][] data = new Object[1][2];
 		data[0][0] = "vaibhav.nagpal@gmail.com";

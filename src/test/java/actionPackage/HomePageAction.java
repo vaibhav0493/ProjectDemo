@@ -1,45 +1,56 @@
 package actionPackage;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import CommonLib.BaseClass;
 import locators.HomePageRepo;
+import locators.GetElement;
 
 public class HomePageAction extends BaseClass {
 
 	HomePageRepo homepage ;
+	public static Logger log = LogManager.getLogger(HomePageAction.class.getName());
 	
-	public HomePageAction(WebDriver driver) {
-		homepage = new HomePageRepo(driver);
+	public static ThreadLocal<WebElement> webElement = new ThreadLocal<WebElement>();
+
+	
+	public HomePageRepo HomePageActionClass() {
+		return new HomePageRepo(driver);
 	}
 	
 	public void clickSignIn() {
-		homepage.signIn().click();
+		GetElement.getAnElement(HomePageActionClass().signIn).click();
+		log.info("Clicked on signIn");
 	}
 	
 	public void enterEmail() {
-		homepage.emailId().sendKeys(prop.getProperty("email"));
+		GetElement.getAnElement(HomePageActionClass().emailId()).sendKeys(prop.getProperty("email"));
+		log.info("Email entered");
 	}
 	
 	public void clickCreateButton() {
-		homepage.createButton().click();
+		GetElement.getAnElement(HomePageActionClass().createButton()).click();
+		log.info("Create button clicked");
 	}
 	
 	public String getErrorText() {
-		return homepage.verifyErrorMsg().getText();
+		return GetElement.getAnElement(HomePageActionClass().verifyErrorMsg()).getText();
 	}
 	
 	public WebElement enterLoginEmail() {
-		return homepage.loginEmail();
+		return GetElement.getAnElement(HomePageActionClass().loginEmail());
 	}
 	
 	public WebElement enterLoginPswd() {
-		return homepage.loginPassword();
+		return GetElement.getAnElement(HomePageActionClass().loginPassword());
 	}
 	
 	public void clickSignInButton() {
-		 homepage.signInButton().click();
+		GetElement.getAnElement(HomePageActionClass().signInButton()).click();
+		log.info("Sign in button clicked");
 	}
 	
 }
