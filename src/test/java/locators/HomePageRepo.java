@@ -13,8 +13,10 @@ public class HomePageRepo extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 	
+	
+	
 	@FindBy(xpath="//a[@href='http://automationpractice.com/index.php?controller=my-account']")
-	private WebElement signIn;
+	public WebElement signIn;
 	
 	@FindBy(xpath="//input[@id='email_create']")
 	private WebElement email;

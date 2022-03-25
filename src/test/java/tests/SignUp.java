@@ -2,7 +2,9 @@ package tests;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,14 +13,16 @@ import CommonLib.BaseClass;
 import CommonLib.Utils;
 import actionPackage.HomePageAction;
 import actionPackage.SignupPageAction;
+import actionPackage.WelcomePageAction;
 import locators.SignupPageRepo;
 
 public class SignUp extends BaseClass {
 
 	public WebDriver driver;
-	HomePageAction homepage = new HomePageAction(driver);
-	SignupPageAction signupPage = new SignupPageAction(driver);
+	HomePageAction homepage = new HomePageAction();
+	SignupPageAction signupPage = new SignupPageAction();
 	SignupPageRepo signupRepo = new SignupPageRepo(driver);
+	WelcomePageAction welcomePage = new WelcomePageAction();
 	Utils utils = new Utils();
 
 	@BeforeMethod
@@ -33,35 +37,33 @@ public class SignUp extends BaseClass {
 			utils.ImplicitWait(driver, 5);
 
 			homepage.clickSignIn();
-			log.info("Clicked on signIn");
-
+			Thread.sleep(2000);
 			homepage.enterEmail();
 			homepage.clickCreateButton();
+			
 			signupPage.clickonMrRadioButton();
 			signupPage.enterFirstname();
 			signupPage.enterLastname();
-			scrollTillElementFound(signupRepo.password(), driver);
-			// signuppage.clickOnInputfield(driver, signupRepo.password());
+			scrollDown(driver);
 			signupPage.clickPassword();
 			signupPage.enterPassowrd();
-			signupPage.clickBirthDay();
-			signupPage.selectBirthDay();
-			signupPage.selectBirthMonth();
-			signupPage.selectBirtYear();
+			//signupPage.selectBirthDay();
+			//signupPage.selectBirthMonth();
+			//signupPage.selectBirtYear();
+			signupPage.selectNewsletterCheckbox();
 			signupPage.selectOptinCheckbox();
-			// signuppage.enterFirstname1();
-			// signuppage.enterLastname1();
+			scrollDown(driver);
 			signupPage.enterCompany();
 			signupPage.enterAddress();
 			signupPage.enterCity();
 			signupPage.enterState();
 			signupPage.enterZipcode();
-			scrollDown(driver);
 			signupPage.enterMobileNumber();
 			signupPage.enterAlias();
 			signupPage.clickRegister();
-
 			log.info("user registered successfully");
+			
+			welcomePage.verifyMyAccount();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,4 +71,6 @@ public class SignUp extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
+
+	
 }

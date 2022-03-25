@@ -10,6 +10,7 @@ import CommonLib.BaseClass;
 public class SignupPageRepo extends BaseClass {
 	
 	public SignupPageRepo(WebDriver driver) {
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -32,15 +33,15 @@ public class SignupPageRepo extends BaseClass {
 	private WebElement email1;
 	
 	@FindBy(xpath="//input[@id='passwd']")
-	private WebElement password;
+	public WebElement pswd;
 	
-	@FindBy(xpath="//select[@name='days']")
-	private WebElement day;
+	@FindBy(xpath="//select[@id='days']")
+	public WebElement day;
 	
-	@FindBy(xpath="//select[@name='months']")
+	@FindBy(xpath="//select[@id='months']")
 	private WebElement month;
 	
-	@FindBy(xpath="//select[@name='years']")
+	@FindBy(xpath="//select[@id='years']")
 	private WebElement year;
 	
 	@FindBy(xpath="//*[@id='newsletter']")
@@ -55,7 +56,7 @@ public class SignupPageRepo extends BaseClass {
 	@FindBy(xpath="//input[@id='lastname']")
 	private WebElement lastname1;
 	
-	@FindBy(xpath ="//input[@id='comapny']")
+	@FindBy(xpath ="//input[@id='company']")
 	private WebElement company;
 	
 	@FindBy(xpath="//input[@id='address1']")
@@ -98,18 +99,18 @@ public class SignupPageRepo extends BaseClass {
 	}
 	
 	public WebElement password() {
-		return password;
+		return pswd;
 	}
 	
-	public WebElement day() {
+	public WebElement days() {
 		return day;
 	}
 	
-	public WebElement month() {
+	public WebElement months() {
 		return month;
 	}
 	
-	public WebElement year() {
+	public WebElement years() {
 		return year;
 	}
 	

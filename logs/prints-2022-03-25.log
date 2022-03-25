@@ -1,0 +1,6 @@
+12:32:11.033 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Email entered
+12:32:11.160 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Create button clicked
+12:32:21.573 [TestNG-test=Test-1] INFO  actionPackage.SignupPageAction - user registered successfully
+12:32:21.614 [TestNG-test=Test-1] INFO  actionPackage.WelcomePageAction - Reached My account page
+11:59:38.167 [TestNG-test=Test-2] INFO  actionPackage.HomePageAction - Clicked on signIn
+11:59:51.516 [TestNG-PoolService-0] INFO  actionPackage.HomePageAction - Clicked on signIn

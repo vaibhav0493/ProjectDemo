@@ -17,27 +17,29 @@ public class Listeners extends BaseClass implements ITestListener{
 	
 	public static ExtentTest test;
 	ExtentReports extent ;
-	private static ThreadLocal<ExtentTest> exTest = new ThreadLocal<ExtentTest>();
+	//private static ThreadLocal<ExtentTest> exTest = new ThreadLocal<ExtentTest>();
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		test = extent.createTest(result.getMethod().getMethodName());
-		exTest.set(test);
-		TestReport.getReportMethod();	
+		//test = reports.startTest(result.getMethod().getMethodName());
+		//test.log(LogStatus.INFO, result.getMethod().getMethodName() + " test started on, " + "Platform : "
+		//		+ prop.getProperty("device") + ", Browser : " + prop.getProperty("browserName"));}
+	
 		
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-		exTest.get().log(Status.PASS, "Test Passed");
+		test.log(Status.PASS, "Test Passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
-		exTest.get().fail(result.getThrowable());
+		test.fail(result.getThrowable());
 		
 		String testMethodName = result.getMethod().getMethodName();
 		try {
@@ -48,7 +50,7 @@ public class Listeners extends BaseClass implements ITestListener{
 		} 
 		
 		try {
-			exTest.get().addScreenCaptureFromPath(getScreenshots(testMethodName,driver), testMethodName);
+			test.addScreenCaptureFromPath(getScreenshots(testMethodName,driver), testMethodName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,7 +63,7 @@ public class Listeners extends BaseClass implements ITestListener{
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
 		test.log(Status.SKIP, "Test skipped");
-		exTest.get().skip(result.getThrowable());
+		test.skip(result.getThrowable());
 	}
 
 	@Override

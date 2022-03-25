@@ -1,3 +1,6 @@
-02:23:11.017 [main] INFO  CommonLib.BaseClass - Error message verified
-17:04:14.336 [main] INFO  CommonLib.BaseClass - Clicked on signIn
-17:04:14.505 [main] INFO  CommonLib.BaseClass - clicked in create button
+11:59:51.645 [TestNG-test=Test-2] INFO  actionPackage.HomePageAction - Email entered
+12:00:16.121 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Clicked on signIn
+12:00:36.629 [TestNG-PoolService-0] INFO  actionPackage.HomePageAction - Clicked on signIn
+12:00:59.288 [TestNG-test=Test-1] INFO  actionPackage.HomePageAction - Clicked on signIn
+12:01:18.012 [TestNG-PoolService-0] INFO  actionPackage.HomePageAction - Clicked on signIn
+12:01:45.448 [TestNG-PoolService-0] INFO  actionPackage.HomePageAction - Clicked on signIn
