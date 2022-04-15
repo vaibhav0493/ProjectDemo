@@ -33,11 +33,8 @@ public class SignUp extends BaseClass {
 	@Test(description="To verify that user should be able to do a successful signup")
 	public void CreateAccount() {
 		try {
-			
-			utils.ImplicitWait(driver, 5);
 
 			homepage.clickSignIn();
-			Thread.sleep(2000);
 			homepage.enterEmail();
 			homepage.clickCreateButton();
 			
@@ -47,9 +44,7 @@ public class SignUp extends BaseClass {
 			scrollDown(driver);
 			signupPage.clickPassword();
 			signupPage.enterPassowrd();
-			//signupPage.selectBirthDay();
-			//signupPage.selectBirthMonth();
-			//signupPage.selectBirtYear();
+
 			signupPage.selectNewsletterCheckbox();
 			signupPage.selectOptinCheckbox();
 			scrollDown(driver);
