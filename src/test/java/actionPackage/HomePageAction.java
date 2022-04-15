@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import CommonLib.BaseClass;
 import locators.HomePageRepo;
@@ -34,12 +35,13 @@ public class HomePageAction extends BaseClass {
 	public void clickCreateButton() {
 		GetElement.getAnElement(HomePageActionClass().createButton()).click();
 		log.info("Create button clicked");
+		Assert.assertEquals("Invalid email address.", GetElement.getAnElement(HomePageActionClass().verifyErrorMsg()).getText());
 	}
-	
+	/*
 	public String getErrorText() {
 		return GetElement.getAnElement(HomePageActionClass().verifyErrorMsg()).getText();
 	}
-	
+	*/
 	public WebElement enterLoginEmail() {
 		return GetElement.getAnElement(HomePageActionClass().loginEmail());
 	}

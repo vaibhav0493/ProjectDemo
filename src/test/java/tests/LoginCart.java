@@ -27,10 +27,8 @@ public class LoginCart extends BaseClass {
 		driver = LaunchURL();
 	}
 
-	@Test(dataProvider = "getLoginData", description="To verify a successful Login")
+	@Test(dataProvider = "getLoginData", description="To verify a user can Login successfully")
 	public void Login(String emailId, String password) {
-
-		utils.ImplicitWait(driver, 5);
 
 		homePage.clickSignIn();
 		homePage.enterLoginEmail().sendKeys(emailId);
@@ -42,8 +40,8 @@ public class LoginCart extends BaseClass {
 	@DataProvider(parallel=true)
 	public Object[][] getLoginData() {
 		Object[][] data = new Object[1][2];
-		data[0][0] = "vaibhav.nagpal@gmail.com";
-		data[0][1] = "test123";
+		data[0][0] = prop.getProperty("data00");
+		data[0][1] = prop.getProperty("data01");
 
 		return data;
 	}
